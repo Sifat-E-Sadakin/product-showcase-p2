@@ -3,11 +3,12 @@ import Image from "next/image";
 import Sidebar from "./components/block/Sidebar";
 import { useEffect, useState } from "react";
 import ProductList from "./components/block/ProductList";
+import Link from "next/link";
 
 export default function Home() {
   const [product, setProduct] = useState([]);
   const [category, setCategory] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("smartphones");
+  const [selectedCategory, setSelectedCategory] = useState("beauty");
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products/category/${selectedCategory}`)
@@ -26,11 +27,11 @@ export default function Home() {
     setSelectedCategory(category);
   };
   return (
-    <main className="grid grid-cols-10">
-      <div className="border border-black h-[100vh] col-start-1 col-end-2">
+    <main className="h-[calc(100vh-80px)] flex">
+      <div className="bg-white h-[calc(100vh-80px)] w-[300px]">
         <Sidebar category={category} changeCategory={changeCategory} />
       </div>
-      <div className="col-start-3 col-end-10">
+      <div className="p-10 h-[calc(100vh-80px)] overflow-scroll flex-1">
         <ProductList products={product} />
       </div>
     </main>

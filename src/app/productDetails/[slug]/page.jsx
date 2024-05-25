@@ -16,10 +16,15 @@ const page = () => {
   return (
     <div>
       {productDetails ? (
-        <div>
-          <h1>{productDetails.title}</h1>
-          <p>{productDetails.price}</p>
-          <img src={productDetails.image} alt={productDetails.name} />
+        <div className="flex justify-center">
+          <div className="w-1/2 flex justify-center items-center">
+            <img src={productDetails.thumbnail} alt="" />
+          </div>
+          <div className="w-1/2 text-center">
+            <h1>{productDetails.title}</h1>
+            <p>{productDetails.price} BDT</p>
+            <p>{productDetails.description}</p>
+          </div>
         </div>
       ) : (
         <p>Loading...</p>

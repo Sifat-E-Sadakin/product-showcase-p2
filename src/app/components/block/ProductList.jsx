@@ -3,14 +3,26 @@ import React, { useEffect, useState } from "react";
 
 const ProductList = ({ products }) => {
   return (
-    <div>
+    <div className="grid grid-cols-4 gap-10 ">
       {products.products?.map((product, index) => (
-        <div key={index} className="border border-black p-2">
-          <h1>{product.title}</h1>
-          <p>{product.price}</p>
-          <Link href={`/productDetails/${product.id}`}>Details</Link>
-          `
-          <img src={product.image} alt={product.name} />
+        <div
+          key={index}
+          className="border border-cyan-300 shadow-lg rounded flex flex-col justify-between">
+          <div className="w-auto h-[250px] py-5 flex justify-center">
+            <img className="h-full" src={product.thumbnail} alt="" />
+          </div>
+          <div className="space-y-5">
+            <div className="text-center">
+              <h1 className="text-xl font-bold">{product.title}</h1>
+              <p className="text-lg font-semibold">{product.price} BDT</p>
+            </div>
+            <Link
+              className="block p-2 text-center bg-cyan-400 text-white hover:bg-cyan-600 duration-300"
+              href={`/productDetails/${product.id}`}>
+              {" "}
+              View Details
+            </Link>
+          </div>
         </div>
       ))}
     </div>
