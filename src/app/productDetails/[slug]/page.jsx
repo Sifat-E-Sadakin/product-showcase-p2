@@ -24,7 +24,7 @@ const page = () => {
     <div className="container mx-auto mb-10">
       {productDetails ? (
         <div>
-          <div className="flex   justify-center items-center my-10">
+          <div className="flex flex-col md:flex-row gap-5   justify-center items-center my-10">
             <div className="w-1/2 flex justify-center items-center">
               <div>
                 <div className="w-96">

@@ -7,9 +7,6 @@ const Navbar = () => {
       <Link href={"/"} className="text-white text-2xl font-semibold">
         Cloudly E-Commerce
       </Link>
-      {/* <Link href={"/"} className="text-white ml-5">
-        Home
-      </Link> */}
     </div>
   );
 };

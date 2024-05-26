@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 const Sidebar = ({ category, changeCategory, activeCategory }) => {
   return (
     <div className="h-full relative">
-      <h1 className="absolute w-full top-0 left-0 bg-cyan-100 text-lg px-5 py-3 opacity-1">
+      <h1 className="absolute w-full top-0 left-0 bg-cyan-100 text-lg px-5 py-3 opacity-1 text-nowrap">
         All Categories List
       </h1>
       <ul className="space-y-2 h-full overflow-y-scroll p-5 pt-14">
