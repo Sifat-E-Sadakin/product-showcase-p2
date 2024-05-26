@@ -9,6 +9,7 @@ export default function Home() {
   const [product, setProduct] = useState([]);
   const [category, setCategory] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("beauty");
+  const [activeCategory, setActiveCategory] = useState("beauty");
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products/category/${selectedCategory}`)
@@ -25,13 +26,18 @@ export default function Home() {
 
   const changeCategory = category => {
     setSelectedCategory(category);
+    setActiveCategory(category);
   };
   return (
     <main className="h-[calc(100vh-80px)] flex">
       <div className="bg-white h-[calc(100vh-80px)] w-[300px]">
-        <Sidebar category={category} changeCategory={changeCategory} />
+        <Sidebar
+          activeCategory={activeCategory}
+          category={category}
+          changeCategory={changeCategory}
+        />
       </div>
-      <div className="p-10 h-[calc(100vh-80px)] overflow-scroll flex-1">
+      <div className="p-10 h-[calc(100vh-80px)] overflow-scroll no-x-scrollbar flex-1">
         <ProductList products={product} />
       </div>
     </main>

@@ -1,9 +1,10 @@
+import { Rating } from "@mui/material";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const ProductList = ({ products }) => {
   return (
-    <div className="grid grid-cols-4 gap-10 ">
+    <div className="grid grid-cols-4 gap-10  ">
       {products.products?.map((product, index) => (
         <div
           key={index}
@@ -14,6 +15,7 @@ const ProductList = ({ products }) => {
           <div className="space-y-5">
             <div className="text-center">
               <h1 className="text-xl font-bold">{product.title}</h1>
+              <Rating value={product.rating} precision={0.5} readOnly />
               <p className="text-lg font-semibold">{product.price} BDT</p>
             </div>
             <Link
